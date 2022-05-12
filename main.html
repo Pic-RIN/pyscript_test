@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+          - matplotlib
+          - numpy
+      </py-env>
+  </head>
+  <body>
+      <h1>なんの意味もない折れ線グラフ</h1>
+      <div id="plot"></div>
+      <py-script>
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = x + np.random.randn(100)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.plot(x,y)
+pyscript.write('plot',fig)
+
+      </py-script> </body>
+</html>
